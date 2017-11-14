@@ -12,6 +12,15 @@ const ArraySeq = (array) =>
     }
 }
 
+const RangeSeq = (from, to) =>
+{
+    let arr = [];
+    for (let i = from; i <= to; i++) {
+        arr.push(i);
+    }
+    return ArraySeq(arr);
+}
+
 //const seq = ArraySeq([1,2,3]);
 
 const logFive = (seq) => {
@@ -28,3 +37,4 @@ const logFive = (seq) => {
 }
 
 logFive(ArraySeq([1,2,5,8,3,5]));
+logFive(RangeSeq(100, 1000));
