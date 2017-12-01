@@ -32,3 +32,18 @@ def longest_sequence(str):
     return ret
 
 print(longest_sequence('ABBBCCDEBBBBEFF'))
+
+def first_recurrent(str):
+    seen = []
+    for c in str:
+        if seen == []:
+            seen.append(c)
+        else:
+            if c in seen:
+                return c
+            else:
+                seen.append(c)
+
+        return None
+
+print(first_recurrent('abcd'))
