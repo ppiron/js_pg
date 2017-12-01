@@ -31,7 +31,7 @@ def longest_sequence(str):
     ret[str[maxind]] = countmax
     return ret
 
-print(longest_sequence('ABBBCCDEBBBBEFF'))
+#print(longest_sequence('ABBBCCDEBBBBEFF'))
 
 def first_recurrent(str):
     seen = []
@@ -44,6 +44,6 @@ def first_recurrent(str):
             else:
                 seen.append(c)
 
-        return None
+    return None
 
-print(first_recurrent('abcd'))
+print(first_recurrent('abcdefgilma'))
