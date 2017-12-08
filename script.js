@@ -1,12 +1,12 @@
-const countSeconds = () => {
-    const day = new Date(2017, 12, 25);
-    const stop = Date.now()
-    const text = document.querySelector('input')
-    let toPass = Math.ceil((day - stop) / 1000).toString()
-    text.value = toPass
-    const timeID = setInterval(() => {
-        toPass = Math.ceil((day - Date.now()) / 1000).toString()
-        text.value = toPass
+const day = new Date(2017, 12, 25);
+const seconds = document.querySelector('#seconds')
+let toPass = Math.ceil((day - Date.now()) / 1000).toString()
+seconds.value = toPass
+let timeID
+const countSeconds = (dayTo) => {
+    timeID = setInterval(() => {
+        toPass = Math.ceil((Date.parse(dayTo) - Date.now()) / 1000).toString()
+        seconds.value = toPass
         console.log(toPass)
         // if (elapsed < 0) {
         //     console.log('Boom')
@@ -16,5 +16,5 @@ const countSeconds = () => {
     
 }
 
-countSeconds()
+countSeconds(day)
 

@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        const updSpan = (date, obj) => {
+            document.querySelector('#day').textContent = date
+            if (timeID) {
+               clearInterval(timeID)
+            }
+            countSeconds(date)
+        }
+        $(function() {
+            $("#day").click(function(){
+               $( "#datepicker" ).datepicker({onSelect: updSpan});
+                $("#datepicker").datepicker("show"); 
+            });            
+        });
+    </script>
 </head>
 <body>
+    <input type="hidden" id="datepicker">
     <p>Seconds to <span id='day'>Christmas</span></p>
-    <input type="text" name='seconds'>
+    <input id='seconds' type="text" name='seconds'>
     <script src="script.js"></script>
 </body>
 </html>
